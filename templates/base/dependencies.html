@@ -1,0 +1,290 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hidden Truth Podcasts.">
+    <meta name="author" content="Otriad Group LLC&trade;">
+    <meta name="generator" content="Otriad Group LLC&trade;">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha" />
+    <link rel="stylesheet" href="https://flowbite.com/docs/flowbite.css?v=1.5.3a">
+    <link rel="stylesheet" href="https://flowbite.com/docs/docs.css?v=1.5.3a">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.svgrepo.com/show/76153/sailboat.svg">
+    
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    {% block external_css %}{% endblock external_css %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500&display=swap');
+        .noto-serif-hebrew-bold { font-family: 'Noto Serif Hebrew', serif; }
+        .checked {
+            color: orange;
+        }
+        .single-line {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .four-lines {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+        
+        .bg-lin-grad { background: linear-gradient(49.21deg, rgba(127, 127, 213, 0.2) 19.87%, rgba(134, 168, 231, 0.2) 58.46%, rgba(145, 234, 228, 0.2) 97.05%)!important; }
+
+        @media (min-width: 768px) {
+            .pl-15vw { padding-left: 15%; }
+            .pr-15vw { padding-right: 15%; }
+        }
+
+        .color-gold { color: #FFD700; }
+
+        .twitter-color { color: #1DA1F2; }
+
+        .border-bottom-gray { border-bottom: 1px solid rgb(229 231 235); }
+
+        .display-none {
+            display: none;    
+        }
+
+        div.scrollmenu {
+            background-color: transparent;
+            white-space: nowrap;
+            overflow: auto;
+        }
+        
+        div.scrollmenu .horizontal-scroll-listing {
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            .corner-toast {
+                width: 30vw !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .corner-toast {
+                width: 90vw !important;
+                bottom: 2vh !important;
+                margin-left: 5vw !important;
+                margin-right: 5vw !important;
+                left: 0 !important;
+            }
+        }
+
+        #chatboxToastBtn {
+            padding: 16px 20px;
+            border-radius: 32px;
+            border: 3px solid rgb(0, 38, 84);
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+        }
+  
+        #chatboxToastContainer {
+          bottom: 80px !important;
+        }
+  
+        #chat { max-height: 40vh; overflow-y: scroll; }
+        .bruno-message { border-radius: 8px; float: left; width: 60%; opacity: 0.95 !important; }
+        .user-message { border-radius: 8px; float: right; width: 60%; color: whitesmoke; opacity: 0.8 !important; background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,7,97,1) 23%, rgba(8,8,109,1) 30%, rgba(9,9,121,1) 35%, rgba(7,56,152,1) 50%, rgba(5,65,134,1) 58%, rgba(0,212,255,1) 100%); }
+  
+        .dashed-underline {
+            text-decoration-line: underline; 
+            text-decoration-style: dashed;
+        }
+        .dashed-underline:hover { cursor: pointer;}
+
+
+        .stars-container {
+        position: relative;
+        display: inline-block;
+        color: transparent;
+        font-size: 28px;
+        }
+    
+        .stars-container:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '★★★★★';
+        color: lightgray;
+        }
+    
+        .stars-container:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '★★★★★';
+        color: gold;
+        overflow: hidden;
+        }
+    
+        .stars-0:after { width: 0%; }
+        .stars-10:after { width: 10%; }
+        .stars-20:after { width: 20%; }
+        .stars-30:after { width: 30%; }
+        .stars-40:after { width: 40%; }
+        .stars-50:after { width: 50%; }
+        .stars-60:after { width: 60%; }
+        .stars-70:after { width: 70%; }
+        .stars-80:after { width: 80%; }
+        .stars-90:after { width: 90%; }
+        .stars-100:after { width: 100; }
+
+        @media (max-width: 1000px) {
+            #ads {
+                display: none;
+            }
+            #listings-container {
+                width: 100vw;
+            }
+        }
+        @media (min-width: 1000px) {
+            #ads {
+                width: 40%;
+            }
+            #listings-container {
+                width: 60%;
+            }
+        }
+
+
+
+
+        #customBtn {
+            display: inline-block;
+            background: white;
+            color: #444;
+            width: 190px;
+            border-radius: 5px;
+            border: thin solid #888;
+            box-shadow: 1px 1px 1px grey;
+            white-space: nowrap;
+          }
+          #customBtn:hover {
+            cursor: pointer;
+          }
+          span.label {
+            font-family: serif;
+            font-weight: normal;
+          }
+          span.icon {
+            background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+            display: inline-block;
+            vertical-align: middle;
+            width: 42px;
+            height: 42px;
+          }
+          span.buttonText {
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 42px;
+            padding-right: 42px;
+            font-size: 14px;
+            font-weight: bold;
+            /* Use the Roboto font that is loaded in the <head> */
+            font-family: 'Roboto', sans-serif;
+          }
+      
+    
+    </style>
+
+
+
+</head>
+
+
+<body class="dark:bg-gray-900">
+
+    {% block body %}
+    {% endblock body %}
+
+
+
+
+    
+
+
+  
+
+
+    
+    
+    
+  
+
+    
+
+
+
+
+
+
+
+    <script src="https://flowbite.com/docs/docs.js?v=1.5.3a"></script>
+
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"
+    integrity="sha512-axJX7DJduStuBB8ePC8ryGzacZPr3rdLaIDZitiEgWWk2gsXxEFlm4UW0iNzj2h3wp5mOylgHAzBzM4nRSvTZA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://flowbite.com/docs/flowbite.js?v=1.5.3a"></script>
+    <script src="https://flowbite.com/docs/datepicker.js?v=1.5.3a"></script>
+    <script src="https://flowbite.com/docs/docs.js?v=1.5.3a"></script>
+
+
+
+
+    {% block JavaScript %}
+    {% endblock JavaScript %}
+
+
+
+
+
+
+
+
+</body>
+
+</html> 

@@ -1,0 +1,453 @@
+{% extends 'base/dependencies.html' %}
+
+{% block body %}
+
+
+<header class="sticky top-0 z-40 flex-none mx-auto w-full bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
+    <div
+        id='banner'
+        tabIndex='-1'
+        class='flex z-50 justify-center py-3 px-4 w-full bg-gray-50 border border-b border-gray-200 dark:border-gray-600 lg:py-4 dark:bg-gray-700'>
+        <div class='items-center md:flex'>
+          <p class='text-sm font-medium text-gray-900 md:my-0 dark:text-white'>
+            <span class='bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline'>New</span>
+            
+              <a href="#" class='inline-flex items-center text-sm font-medium text-blue-600 md:ml-2 dark:text-blue-500 hover:underline'>
+                Sign up by Georgetown Day to WIN BIG!
+                <svg
+                class='ml-1 w-4 h-4 text-blue-600 dark:text-blue-500'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'>
+                  <path
+                    fillRule='evenodd'
+                    d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                    clipRule='evenodd'></path>
+                </svg>
+              </a>
+
+
+
+          </p>
+        </div>
+    </div> 
+
+    <div class="flex justify-between items-center py-3 px-3 mx-auto w-full max-w-8xl lg:px-4">
+        <div class="flex items-center">
+            <button data-collapse-toggle="flowbiteMenu" type="button" class="mr-4 pr-4inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-500" aria-controls="flowbiteMenu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+        
+        
+            <div class="flex justify-between items-center">
+            <a href="/" class="flex">
+                {% comment %} <img src="https://www.svgrepo.com/show/76153/sailboat.svg" class="mr-3 h-8" alt="Hidden Truth&trade; Logo" /> {% endcomment %}
+                <h1 class="text-2xl font-extrabold text-gray-900 dark:text-white md:text-2xl lg:text-2xl">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Hidden Truth&trade;</span> <!-- self-center text-2xl font-semibold whitespace-nowrap dark:text-white -->
+                </h1>
+            </a>
+            </div>
+            
+        </div>
+  
+        <div class="flex items-center" id="">
+            <ul id="flowbiteMenu" class="hidden flex-col pt-6 lg:flex-row lg:self-center lg:py-0 lg:flex">
+
+
+
+              <li class="mb-3 lg:px-2 xl:px-3 lg:mb-0 xl:block">
+                <button id="groups-dropdownNavbarLink" data-dropdown-toggle="groups-dropdownNavbar" class="flex items-center justify-between text-sm font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 mt-1">Groups <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                <!-- Dropdown menu -->
+                <div id="groups-dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                      
+                      {% if request.user.is_authenticated %}
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My groups</a>
+                      </li> 
+                      {% endif %}
+
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All groups</a>
+                      </li>
+
+                    </ul>
+                </div>
+              </li>
+
+    
+    
+
+            </ul>
+
+
+            {% if request.user.is_authenticated %}
+            <div class="ml-2 flex items-center md:order-2">
+                <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="w-8 h-8 rounded-full" src="https://www.svgrepo.com/show/13656/user.svg" alt="user photo">
+                </button>
+                <!-- Dropdown menu -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                  <div class="px-4 py-3">
+                    <span class="block text-sm text-gray-900 dark:text-white">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+                    <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">@{{ request.user.username }}</span>
+                  </div>
+                  <ul class="py-2" aria-labelledby="user-menu-button">
+                    {% if request.user.is_superuser %}
+                      <li>
+                        <a href="/admin/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin</a>
+                      </li>
+                    {% endif %}
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile and settings</a>
+                        </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Lotteries 💰</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Leaderboard</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Ticket Hub</a>
+                    </li>
+                  <li>
+                        <a href="#" class="text-red-600 block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            {% endif %}
+
+
+                <a type="button" href="#" class="inline-flex relative items-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                    {% comment %} <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg> {% endcomment %}
+                    <i class="fas fa-bell fa-lg"></i>
+                    <span class="sr-only">Notifications</span>
+                    {% comment %} <div class="inline-flex absolute -top-2 -right-2 justify-center items-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">!</div> {% endcomment %}
+                </a> 
+  
+                <div id="tooltip-notifications" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip">
+                    View notifications
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+
+
+
+                <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg aria-hidden="true" id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg aria-hidden="true" id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Toggle dark mode</span>
+                </button>
+                <div id="tooltip-toggle" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip">
+                    Toggle dark mode
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div> 
+
+                {% if not request.user.is_authenticated %}
+                    <a href="{% url 'login' %}"  class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-3">Login</a>
+                    <a href="{% url 'register' %}"  class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-3">Register</a>
+                {% endif %}
+
+
+        </div>
+    </div> 
+
+</header> 
+
+
+
+
+{% block secondary_header %}{% endblock secondary_header %}
+  
+
+    {% block main %}
+    {% endblock main %}
+
+    <footer class="py-12 bg-gray-50 xl:py-24 dark:bg-gray-800">
+        <div class="px-4 mx-auto w-full max-w-8xl">
+            <div class="grid gap-12 xl:grid-cols-6 xl:gap-24">
+                <div class="col-span-2">
+                    <a href="/" class="flex mb-5">
+                    <img src="https://www.svgrepo.com/show/76153/sailboat.svg" class="mr-3 h-8" alt="Hidden Truth&trade; Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hidden Truth&trade;</span>
+                    </a>
+                    <p class="mb-3 max-w-lg text-gray-600 dark:text-gray-400">Hoyabay&trade; is a digital marketplace on which university students and organizations can seamlessly and conveniently transact.</p>
+                    <p class="mb-3 max-w-lg text-gray-600 dark:text-gray-400">Disclaimer: Hoyabay&trade; is privately run and not officially affiliated with any public or private universities in any way.</p>
+                    {% comment %} <p class="max-w-lg text-gray-600 dark:text-gray-400">Code licensed <a href="https://github.com/themesberg/flowbite/blob/main/LICENSE.md" class="text-blue-600 dark:text-blue-500 hover:underline" rel="nofollow">MIT</a>, docs <a href="https://creativecommons.org/licenses/by/3.0/" class="text-blue-600 hover:underline dark:text-blue-500" rel="nofollow">CC BY 3.0</a>.</p> {% endcomment %}
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Resources</h3>
+                    <ul>
+                        <li class="mb-4">
+                        <a href="#"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Listings</a>
+                        </li>
+                        <li class="mb-4">
+                        <a href="#" rel="noreferrer nofollow"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">My listings</a>
+                        </li>
+                        <li class="mb-4">
+                        <a href="#" rel="noreferrer nofollow"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">My purchases</a>
+                        </li>
+                        <li class="mb-4">
+                        <a href="#"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">My sales</a>
+                        </li>
+                        <li class="mb-4">
+                        <a href="#"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Help and support</h3>
+                    <ul>
+                        <li class="mb-4">
+                            <a href="#" rel="noreferrer nofollow"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Contact us</a>
+                        </li>
+                        {% if request.user.is_superuser %}
+                        <li class="mb-4">
+                            <a href="#" rel="noreferrer nofollow"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Feedback from customers</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/admin/" rel="noreferrer nofollow"
+                            class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Admin</a>
+                        </li>
+                        {% endif %}
+                        </ul>
+                        </div>
+                        <div>
+                        <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Groups</h3>
+                        <ul>
+                        <li class="mb-4">
+                        <a disabled href="#" rel="noreferrer nofollow"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Groups</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="mb-6 text-sm font-semibold text-gray-400 uppercase dark:text-white">Legal</h3>
+                    <ul>
+                        {% comment %} <li class="mb-4">
+                        <a href="https://flowbite.com/license/" class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">License (EULA)</a>
+                        </li> {% endcomment %}
+                        <li class="mb-4">
+                        <a href="#" rel="noreferrer nofollow"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Privacy Policy</a>
+                        </li>
+                        <li class="mb-4">
+                        <a href="#" rel="noreferrer nofollow"
+                        class="font-normal text-gray-600 dark:text-gray-400 dark:hover:text-white hover:underline">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-200 dark:border-gray-700 lg:my-12" />
+            <span class="block text-center text-gray-600 dark:text-gray-400 font-">© 2023<span id="currentYear"></span> <a href="https://hoyabay.com/">Hoyabay&trade;</a> . All Rights Reserved.
+            </span>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+    {% comment %} <button type="button" class="btn btn-outline-navy bg-lin-grad noprint" id="chatboxToastBtn"><i class="fas fa-comment"></i></button>
+
+    <div style="display: none; position: fixed;" id="chatboxToast" class="corner-toast flex bottom-5 right-5 items-center p-4 text-gray-500 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-400" role="alert">
+        <div class="flex">
+            <div class="ml-3 text-sm font-normal toast-body">
+                <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Chat with Bruno</span>
+                <div id="chat">
+                    <div class="chatbox-message bruno-message bg-lin-grad p-2 mt-2 mb-2">
+                        How can I help you?
+                    </div>
+                </div>
+
+            
+        
+            </div>
+            <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" aria-label="Close" class="btn-close" id="btn-close-chatbox" onclick="closeChatbox()"> <!-- data-dismiss-target="#chatboxToast" -->
+                <span class="sr-only">Close</span>
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+        <div class="mb-2">
+            <div class="flex items-center py-2 px-3 rounded-lg bg-gray-50 dark:bg-gray-700">
+                <textarea id="user-message-text" rows="1" class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+                    <button type="button" id="user-message-send" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
+                    <svg aria-hidden="true" class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                    <span class="sr-only">Send message</span>
+                </button>
+            </div>
+
+        </div>
+
+    </div>  {% endcomment %}
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    {% comment %} <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> {% endcomment %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+    <script>
+
+
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    
+        // Change the icons inside the button based on previous settings
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+            document.documentElement.classList.add('dark');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+            document.documentElement.classList.remove('dark')
+        }
+    
+        var themeToggleBtn = document.getElementById('theme-toggle');
+    
+        themeToggleBtn.addEventListener('click', function() {
+    
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+    
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+    
+            // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else { 
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+            
+        });
+    
+    </script>
+
+    {% comment %} <script defer>
+        const chatbox_toastTrigger = document.getElementById('chatboxToastBtn');
+        const chatbox_toastLiveExample = document.getElementById('chatboxToast');
+        if (chatbox_toastTrigger) {
+          chatbox_toastTrigger.addEventListener('click', () => {
+            if (chatbox_toastTrigger.classList.contains("chatbox-active")) {
+              document.getElementById('chatboxToast').style.display = "none";
+              chatbox_toastTrigger.classList.remove("chatbox-active");
+            } else {
+      
+            
+            chatbox_toastLiveExample.style.display = "inline-block";
+            chatbox_toastTrigger.classList.add("chatbox-active");
+            }
+          })
+        }
+        function closeChatbox() {
+          chatbox_toastLiveExample.style.display = "none";
+          chatbox_toastTrigger.classList.remove("chatbox-active");
+        }
+      
+        /*btn = document.querySelector("chatbox-active");
+        btn.addEventListener('click', () => {
+          document.getElementById('chatboxToast').style.display = "none";
+          btn.classList.remove("chatbox-active");
+        })*/
+      
+    </script>
+    
+    <script defer>          
+        $('#user-message-send').on('click', function (clickEvent) {
+            url = window.location.href;
+            $.ajax({
+                url: `/{{ 'ajax-chatbox' }}/`,
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}', 
+                    msg: document.getElementById("user-message-text").value,
+                },
+                error: function(response) {
+                    console.log(response);
+                },
+                success: function(response) {
+                    console.log(response);
+                    console.log("User message: " + response.userMsg);
+                    console.log("Chatbox response message: " + response.chatboxMsg);
+        
+                    const user_node = document.createElement("div");
+                    user_node.classList.add("chatbox-message");
+                    user_node.classList.add("user-message");
+                    user_node.classList.add("p-2");
+                    user_node.classList.add("mt-2");
+                    user_node.classList.add("mb-2");
+                    const user_text_node = document.createTextNode(response.userMsg);
+                    user_node.appendChild(user_text_node);
+                    document.getElementById("chat").appendChild(user_node);
+        
+                    const bruno_node = document.createElement("div");
+                    bruno_node.classList.add("chatbox-message");
+                    bruno_node.classList.add("bruno-message");
+                    bruno_node.classList.add("bg-lin-grad");
+                    bruno_node.classList.add("p-2");
+                    bruno_node.classList.add("mt-2");
+                    bruno_node.classList.add("mb-2");
+                    /* const bruno_text_node = document.createTextNode(response.chatboxMsg);
+                    bruno_node.appendChild(bruno_text_node); */
+                    bruno_node.innerHTML = response.chatboxMsg;
+                    document.getElementById("chat").appendChild(bruno_node);
+                    // document.getElementById("translation").innerHTML = response.translated_text;
+        
+                    $("#chat").scrollTop($("#chat")[0].scrollHeight);
+        
+                    msg: document.getElementById("user-message-text").value = "";
+        
+        
+                }
+            });
+        }); 
+    </script> {% endcomment %}
+
+{% endblock body %}
+
+
+
+
+
+
